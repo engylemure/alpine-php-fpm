@@ -39,7 +39,7 @@ RUN docker-php-ext-install \
         curl dom intl ctype \
         pdo_mysql mysqli \
         opcache iconv \
-        session mbstring && \
+        session mbstring zip && \
     pecl channel-update pecl.php.net && \
     pecl install redis-3.1.2 && \
     pecl install memcached-3.0.3 && \
