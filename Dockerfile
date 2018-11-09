@@ -23,6 +23,7 @@ RUN apk add --update \
         git \
         ca-certificates \
         nodejs \
+        ssl \
         nano
 
 RUN docker-php-ext-configure gd \
