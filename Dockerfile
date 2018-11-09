@@ -23,7 +23,6 @@ RUN apk add --update \
         git \
         ca-certificates \
         nodejs \
-        openssl \
         nano
 
 RUN docker-php-ext-configure gd \
@@ -45,5 +44,7 @@ RUN docker-php-ext-install \
     pecl install redis-3.1.2 && \
     pecl install memcached-3.0.3 && \
     curl -O -sS https://getcomposer.org/installer && php installer --version=1.7.2 && mv composer.phar /usr/bin/composer
+
+RUN apk add --update ca-certificates openssl && update-ca-certificates
 
 COPY php.ini /usr/local/etc/php/
