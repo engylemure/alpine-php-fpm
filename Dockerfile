@@ -43,6 +43,6 @@ RUN docker-php-ext-install \
     pecl channel-update pecl.php.net && \
     pecl install redis-3.1.2 && \
     pecl install memcached-3.0.3 && \
-    curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer
+    curl -O -sS https://getcomposer.org/installer && php installer --version=1.7.2 && mv composer.phar /usr/bin/composer
 
 COPY php.ini /usr/local/etc/php/
